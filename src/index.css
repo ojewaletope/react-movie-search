@@ -1,13 +1,125 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+    --color-light: rgb(244, 244, 244);
+    --color-dark: #333;
+    --small-font: 1.2rem;
+    --para-font: 1.6rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+    font-size: 10px;
+}
+
+*,
+*:before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--color-light);
+    color: var(--color-dark);
+}
+
+p {
+    font-size: var(--para-font);
+}
+
+small {
+    font-size: var(--small-font);
+}
+
+img {
+    max-width: 100%;
+}
+.container {
+    margin: 0 auto;
+    padding: 40px;
+    max-width: 1000px;
+}
+
+.title {
+    font-size: 4.4rem;
+    text-align: center;
+}
+
+.form {
+    display: grid;
+}
+
+.label {
+    font-size: var(--small-font);
+    margin-bottom: 0.2rem;
+    text-transform: uppercase;
+}
+
+.input {
+    font-size: var(--para-font);
+    padding: 0.5rem 2rem;
+    line-height: 2.8rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 1rem;
+}
+
+::placeholder {
+    color: #ccc;
+}
+
+.button {
+    background: var(--color-dark);
+    padding: 1rem 2rem;
+    color: var(--color-light);
+    border: 1px solid var(--color-dark);
+    border-radius: 8px;
+    font-size: var(--para-font);
+    cursor: pointer;
+    transition: background-color 250ms;
+}
+
+.button:hover {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+@media (min-width: 786px) {
+    .form {
+        grid-template-columns: auto 1fr auto;
+        grid-gap: 1rem;
+        align-items: center;
+    }
+
+    .label, .input {
+        margin-bottom: 0;
+    }
+    .card-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 32%;
+    }
+    .card + .card {
+        margin-left: 1rem;
+    }
+}
+.card-list {
+    margin-top: 4rem;
+}
+.card {
+    padding: 2rem 4rem;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+    margin-bottom: 2rem;
+    background: #fff;
+}
+.card--image {
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+.card--title {
+    margin-bottom: .5rem;
+    font-size: 3.2rem;
 }
